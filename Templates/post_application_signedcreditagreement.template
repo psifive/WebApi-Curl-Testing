@@ -2,6 +2,9 @@
 
 URL=$(cat url.txt)
 TOKEN=$(cat token.txt)
+DATENOW=$(date +%Y-%m-%dT%H:%M:%SZ)
+
+sed -e"s;%DATENOW%;${DATENOW};g" ./Templates/post_application_signedcreditagreement_json.template > ./JSON/post_application_signedcreditagreement.json
 
 echo "curl -s -H \"Accept:application/json;version=1\" -H \"Content-Type: application/json\" -H \"Authorization: Bearer ${TOKEN}\" -X POST -d @./JSON/post_application_signedcreditagreement.json ${URL}/application/%APPLICATIONID%/signedcreditagreement"
 
