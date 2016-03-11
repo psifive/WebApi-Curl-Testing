@@ -11,3 +11,4 @@ JSON=$(curl -s -H "Accept:application/json;version=1" -H "Content-Type: applicat
 
 echo ${JSON} | jq '.'
 
+chmod +x *

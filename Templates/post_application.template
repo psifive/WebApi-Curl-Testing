@@ -21,3 +21,5 @@ sed -e"s;%APPLICATIONID%;${APPLICATIONID};g" ./Templates/get_application_documen
 sed -e"s;%APPLICATIONID%;${APPLICATIONID};g" ./Templates/post_application_signedcreditagreement.template > post_application_signedcreditagreement.sh
 sed -e"s;%APPLICATIONID%;${APPLICATIONID};g" ./Templates/put_application_checklistcondition.template > put_application_checklistcondition.sh
 sed -e"s;%APPLICATIONID%;${APPLICATIONID};g" ./Templates/put_application_status_accepted.template > put_application_status_accepted.sh
+
+chmod +x *

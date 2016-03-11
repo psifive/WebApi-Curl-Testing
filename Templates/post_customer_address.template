@@ -12,3 +12,5 @@ echo "curl -s -H \"Accept:application/json;version=1\" -H \"Content-Type: applic
 JSON=$(curl -s -H "Accept:application/json;version=1" -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" -X POST -d @./JSON/post_customer_address.json ${URL}/customer/%CUSTOMERID%/address)
 
 echo ${JSON} | jq '.'
+
+chmod +x *

@@ -12,3 +12,5 @@ echo "curl -s -H \"Accept:application/json;version=1\" -H \"Content-Type: applic
 JSON=$(curl -s -H "Accept:application/json;version=1" -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" -X PUT -d @./JSON/put_application_checklistcondition.json ${URL}/application/%APPLICATIONID%/checklistcondition/5)
 
 echo ${JSON} | jq '.'
+
+chmod +x *

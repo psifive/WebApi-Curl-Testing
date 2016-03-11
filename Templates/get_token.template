@@ -6,5 +6,8 @@ JSON=$(curl -s -d "username=%USERNAME%&password=%PASSWORD%&grant_type=password" 
 TOKEN=$(echo ${JSON} | jq -r '.access_token')
 
 sed -e "s;%TOKEN%;${TOKEN};g" ./Templates/token.template > token.txt
+.Templates/post_customer.template > post_customer.sh
 
 echo ${JSON} | jq '.'
+
+chmod +x *

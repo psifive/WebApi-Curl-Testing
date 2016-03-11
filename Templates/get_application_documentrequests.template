@@ -12,3 +12,5 @@ echo ${JSON} | jq '.'
 DOCUMENTREQUESTID=$(echo ${JSON} | jq '.collectionItems[0].documentRequest.id')
 
 sed -e"s;%DOCUMENTREQUESTID%;${DOCUMENTREQUESTID};g" ./Templates/get_application_documentrequest_noapp.template > get_application_documentrequest.sh
+
+chmod +x *

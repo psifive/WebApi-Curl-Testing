@@ -8,3 +8,5 @@ echo "curl -s -H \"Accept:application/json;version=1\" -H \"Content-Type: applic
 JSON=$(curl -s -H "Accept:application/json;version=1" -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" -X POST -d @./JSON/post_application_signedcreditagreement.json ${URL}/application/%APPLICATIONID%/signedcreditagreement)
 
 echo ${JSON} | jq '.'
+
+chmod +x *

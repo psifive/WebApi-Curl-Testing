@@ -20,3 +20,5 @@ CUSTOMERID=$(echo ${JSON} | jq '.id')
 sed -e"s;%CUSTOMERID%;${CUSTOMERID};g" ./Templates/post_customer_address.template > post_customer_address.sh
 sed -e"s;%CUSTOMERID%;${CUSTOMERID};g" ./Templates/post_customer_bankaccount.template > post_customer_bankaccount.sh
 sed -e"s;%CUSTOMERID%;${CUSTOMERID};g" ./Templates/post_application.template > post_application.sh
+
+chmod +x *

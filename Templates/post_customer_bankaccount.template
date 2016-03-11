@@ -16,3 +16,5 @@ echo ${JSON} | jq '.'
 BANKACCOUNTID=$(echo ${JSON} | jq '.id')
 
 sed -e"s;%BANKACCOUNTID%;${BANKACCOUNTID};g" ./Templates/put_application_bankaccountlink.template > ./Templates/put_application_bankaccountlink_noapp.template
+
+chmod +x *
