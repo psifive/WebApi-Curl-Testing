@@ -1,0 +1,12 @@
+#!/bin/bash
+
+URL=$(cat url.txt)
+TOKEN=$(cat token.txt)
+
+echo "curl -s -H \"Accept:application/json;version=1\" -H \"Content-Type: application/json\" -H \"Authorization: Bearer ${TOKEN}\" ${URL}/application/%APPLICATIONID%/status"
+
+JSON=$(curl -s -H "Accept:application/json;version=1" -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" ${URL}/application/%APPLICATIONID%/status)
+
+echo ${JSON} | jq '.'
+
+chmod +x *

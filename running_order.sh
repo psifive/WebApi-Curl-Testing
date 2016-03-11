@@ -11,4 +11,5 @@
 ./get_application_documentrequest.sh
 #./put_application_checklistcondition.sh
 ./post_application_signedcreditagreement.sh
+./get_application_status.sh
 
