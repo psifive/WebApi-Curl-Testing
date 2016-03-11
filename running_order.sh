@@ -9,5 +9,6 @@
 ./put_application_status_accepted.sh
 ./get_application_documentrequests.sh
 ./get_application_documentrequest.sh
+#./put_application_checklistcondition.sh
 ./post_application_signedcreditagreement.sh
-./put_application_status_accepted.sh
+

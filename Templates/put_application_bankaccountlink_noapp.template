@@ -5,9 +5,9 @@ TOKEN=$(cat token.txt)
 
 echo ""
 
-echo "curl -s -H \"Accept:application/json;version=1\" -H \"Content-Type: application/json\" -H \"Content-Length: 0\" -H \"Authorization: Bearer ${TOKEN}\" -X PUT ${URL}/application/%APPLICATIONID%/bankaccount/6209/bankaccountlink"
+echo "curl -s -H \"Accept:application/json;version=1\" -H \"Content-Type: application/json\" -H \"Content-Length: 0\" -H \"Authorization: Bearer ${TOKEN}\" -X PUT ${URL}/application/%APPLICATIONID%/bankaccount/6213/bankaccountlink"
 
-JSON=$(curl -s -H "Accept:application/json;version=1" -H "Content-Type: application/json" -H "Content-Length: 0" -H "Authorization: Bearer ${TOKEN}" -X PUT ${URL}/application/%APPLICATIONID%/bankaccount/6209/bankaccountlink)
+JSON=$(curl -s -H "Accept:application/json;version=1" -H "Content-Type: application/json" -H "Content-Length: 0" -H "Authorization: Bearer ${TOKEN}" -X PUT ${URL}/application/%APPLICATIONID%/bankaccount/6213/bankaccountlink)
 
 echo ${JSON} | jq '.'
 
