@@ -2,6 +2,9 @@
 
 URL=$(cat url.txt)
 TOKEN=$(cat token.txt)
+DATENOW=$(date +%Y-%m-%dT%H:%M:%SZ)
+
+sed -e"s;%DATENOW%;${DATENOW};g" ./Templates/put_application_checklistcondition_json.template > ./JSON/put_application_checklistcondition.json
 
 cat ./JSON/put_application_checklistcondition.json
 
