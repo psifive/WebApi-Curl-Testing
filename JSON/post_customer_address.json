@@ -1,0 +1,19 @@
+{
+  "AddressType": "UK address",
+  "EffectiveFromDate": "2011-06-25T00:00:00Z",
+  "StandardAddress": {
+    "FlatNumber": "Flat1",
+    "BuildingNumber": "2",
+    "BuildingName": "Simpson House",
+    "Street": "Clarence Drive",
+    "Locality": "",
+    "DependentLocality": "",
+    "Town": "Harrogate",
+    "County": "North Yorkshire",
+    "Country": "UNITED KINGDOM",
+    "ResidentialStatus": "not asked"
+  },
+  "BFPOAddress": null,
+  "Postcode": "HG1 2PE",
+  "AdditionalAttributes": null
+}

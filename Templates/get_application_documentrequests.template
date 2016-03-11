@@ -1,0 +1,14 @@
+#!/bin/bash
+
+URL=$(cat url.txt)
+TOKEN=$(cat token.txt)
+
+echo "curl -s -H \"Accept:application/json;version=1\" -H \"Content-Type: application/json\" -H \"Authorization: Bearer ${TOKEN}\" ${URL}/application/%APPLICATIONID%/documentrequests?document_type=CCA%20Agreement"
+
+JSON=$(curl -s -H "Accept:application/json;version=1" -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" ${URL}/application/%APPLICATIONID%/documentrequests?document_type=CCA%20Agreement)
+
+echo ${JSON} | jq '.'
+
+DOCUMENTREQUESTID=$(echo ${JSON} | jq '.collectionItems[0].documentRequest.id')
+
+sed -e"s;%DOCUMENTREQUESTID%;${DOCUMENTREQUESTID};g" ./Templates/get_application_documentrequest_noapp.template > get_application_documentrequest.sh

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+URL=$(cat url.txt)
+JSON=$(curl -s -d "username=%USERNAME%&password=%PASSWORD%&grant_type=password" ${URL}/token)
+
+TOKEN=$(echo ${JSON} | jq -r '.access_token')
+
+sed -e "s;%TOKEN%;${TOKEN};g" ./Templates/token.template > token.txt
+
+echo ${JSON} | jq '.'

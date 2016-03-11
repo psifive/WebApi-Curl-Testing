@@ -1,0 +1,22 @@
+#!/bin/bash
+
+URL=$(cat url.txt)
+TOKEN=$(cat token.txt)
+
+cat ./JSON/post_customer.json
+
+echo ""
+
+echo "curl -s -H \"Accept:application/json;version=1\" -H \"Content-Type: application/json\" -H \"Authorization: Bearer ${TOKEN}\" -X POST -d @./JSON/post_customer.json ${URL}/customer"
+
+JSON=$(curl -s -H "Accept:application/json;version=1" -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" -X POST -d @./JSON/post_customer.json ${URL}/customer)
+
+echo ""
+
+echo ${JSON} | jq '.'
+
+CUSTOMERID=$(echo ${JSON} | jq '.id')
+
+sed -e"s;%CUSTOMERID%;${CUSTOMERID};g" ./Templates/post_customer_address.template > post_customer_address.sh
+sed -e"s;%CUSTOMERID%;${CUSTOMERID};g" ./Templates/post_customer_bankaccount.template > post_customer_bankaccount.sh
+sed -e"s;%CUSTOMERID%;${CUSTOMERID};g" ./Templates/post_application.template > post_application.sh

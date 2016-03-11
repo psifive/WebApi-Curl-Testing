@@ -1,0 +1,21 @@
+{
+  "title": "Mr",
+  "forename" : "Finn",
+  "middleNames": "",
+  "surname": "Devr",
+  "maidenName": "",
+  "salutation": "Finn",
+  "dateOfBirth": "1965-04-06T00:00:00Z",
+  "gender": "Male",
+  "homePhoneNumber": "0113 222 1111",
+  "mobilePhoneNumber": "0777 333 2222",
+  "workPhoneNumber": "0113 335 3333",
+  "emailAddress": "finn.devr@nostrumgroup.com",
+  "maritalStatus": "Not Asked",
+  "employmentStatus": "Not Asked",
+  "nationality": "Not Asked",
+  "externalCustomerReference": "findevr-1234",
+  "enquirySource": "Online",
+  "securityQuestion": "Last 4 digits of your bank account number",
+  "securityAnswer": "9090"
+}

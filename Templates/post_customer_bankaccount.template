@@ -1,0 +1,18 @@
+#!/bin/bash
+
+URL=$(cat url.txt)
+TOKEN=$(cat token.txt)
+
+cat ./JSON/post_customer_bankaccount.json
+
+echo ""
+
+echo "curl -s -H \"Accept:application/json;version=1\" -H \"Content-Type: application/json\" -H \"Authorization: Bearer ${TOKEN}\" -X POST -d @./JSON/post_customer_bankaccount.json ${URL}/customer/%CUSTOMERID%/bankaccount"
+
+JSON=$(curl -s -H "Accept:application/json;version=1" -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" -X POST -d @./JSON/post_customer_bankaccount.json ${URL}/customer/%CUSTOMERID%/bankaccount)
+
+echo ${JSON} | jq '.'
+
+BANKACCOUNTID=$(echo ${JSON} | jq '.id')
+
+sed -e"s;%BANKACCOUNTID%;${BANKACCOUNTID};g" ./Templates/put_application_bankaccountlink.template > ./Templates/put_application_bankaccountlink_noapp.template

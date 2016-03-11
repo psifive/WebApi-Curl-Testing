@@ -1,0 +1,21 @@
+{
+  "cost": 1539.0,
+  "deposit": 99.0,
+  "documentFee": 0.0,
+  "documentFeeFinanced": true,
+  "externalApplicationReference1": "FD-2016-03-29",
+  "externalApplicationReference2": "FD-123",
+  "externalApplicationReference3": "ABCDE12345",
+  "financialProduct": "IBC",
+  "channel": "Online",
+  "introducer": "100001",
+  "interestRate": 0.1,
+  "interestRateType": "APR",
+  "numberOfPeriodsToFirstPayment": 2,
+  "numberOfPayments": 24,
+  "optionToPurchaseFee": null,
+  "paymentFrequency": "Monthly",
+  "paymentMethod": "Direct Debit",
+  "payoutMethod": "Cheque",
+  "startDate": "2016-03-30T00:00:00"
+}

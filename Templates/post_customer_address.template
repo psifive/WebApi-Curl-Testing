@@ -1,0 +1,14 @@
+#!/bin/bash
+
+URL=$(cat url.txt)
+TOKEN=$(cat token.txt)
+
+cat ./JSON/post_customer_address.json
+
+echo ""
+
+echo "curl -s -H \"Accept:application/json;version=1\" -H \"Content-Type: application/json\" -H \"Authorization: Bearer ${TOKEN}\" -X POST -d @./JSON/post_customer_address.json ${URL}/customer/%CUSTOMERID%/address"
+
+JSON=$(curl -s -H "Accept:application/json;version=1" -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" -X POST -d @./JSON/post_customer_address.json ${URL}/customer/%CUSTOMERID%/address)
+
+echo ${JSON} | jq '.'

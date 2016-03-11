@@ -1,0 +1,23 @@
+#!/bin/bash
+
+URL=$(cat url.txt)
+TOKEN=$(cat token.txt)
+
+cat ./JSON/post_application.json
+
+echo ""
+
+echo "curl -s -H \"Accept:application/json;version=1\" -H \"Content-Type: application/json\" -H \"Authorization: Bearer ${TOKEN}\" -X POST -d @./JSON/post_application.json ${URL}/customer/%CUSTOMERID%/application"
+
+JSON=$(curl -s -H "Accept:application/json;version=1" -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" -X POST -d @./JSON/post_application.json ${URL}/customer/%CUSTOMERID%/application)
+
+echo ${JSON} | jq '.'
+
+APPLICATIONID=$(echo ${JSON} | jq '.id')  
+
+sed -e"s;%APPLICATIONID%;${APPLICATIONID};g" ./Templates/put_application_bankaccountlink_noapp.template > put_application_bankaccountlink.sh
+sed -e"s;%APPLICATIONID%;${APPLICATIONID};g" ./Templates/get_application_documentrequests.template > get_application_documentrequests.sh
+sed -e"s;%APPLICATIONID%;${APPLICATIONID};g" ./Templates/get_application_documentrequest.template > ./Templates/get_application_documentrequest_noapp.template
+sed -e"s;%APPLICATIONID%;${APPLICATIONID};g" ./Templates/post_application_signedcreditagreement.template > post_application_signedcreditagreement.sh
+sed -e"s;%APPLICATIONID%;${APPLICATIONID};g" ./Templates/put_application_checklistcondition.template > put_application_checklistcondition.sh
+sed -e"s;%APPLICATIONID%;${APPLICATIONID};g" ./Templates/put_application_status_accepted.template > put_application_status_accepted.sh
