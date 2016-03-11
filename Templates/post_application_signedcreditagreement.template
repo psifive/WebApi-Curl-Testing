@@ -2,7 +2,7 @@
 
 URL=$(cat url.txt)
 TOKEN=$(cat token.txt)
-DATENOW=$(date +%Y-%m-%dT%H:%M:%SZ)
+DATENOW=$(cat date.txt)
 
 sed -e"s;%DATENOW%;${DATENOW};g" ./Templates/post_application_signedcreditagreement_json.template > ./JSON/post_application_signedcreditagreement.json
 

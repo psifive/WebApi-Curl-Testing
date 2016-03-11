@@ -11,6 +11,13 @@ echo ${JSON} | jq -r '.documentRequest.documents[0].fileContents' > CCADocument.
 
 openssl enc -base64 -d -A -in CCADocument.base64 -out CCADocument.pdf
 
-open CCADocument.pdf
+ENVIRONAME=$(uname)
+
+if [ ${ENVIRONAME} == 'Darwin' ]
+    then
+        open CCADocument.pdf
+    else
+        CCADocument.pdf
+fi
 
 chmod +x *
