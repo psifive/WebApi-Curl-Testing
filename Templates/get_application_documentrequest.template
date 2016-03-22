@@ -15,7 +15,8 @@ ENVIRONAME=$(uname)
 
 if [ ${ENVIRONAME} == 'Darwin' ]
     then
-        open CCADocument.pdf
+        #open CCADocument.pdf
+        echo CCADocument.pdf
     else
         CCADocument.pdf
 fi

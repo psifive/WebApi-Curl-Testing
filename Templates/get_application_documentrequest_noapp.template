@@ -3,9 +3,9 @@
 URL=$(cat url.txt)
 TOKEN=$(cat token.txt)
 
-echo "curl -s -H \"Accept:application/json;version=1\" -H \"Content-Type: application/json\" -H \"Authorization: Bearer ${TOKEN}\" ${URL}/application/5438/documentrequest/%DOCUMENTREQUESTID%?get_file=true"
+echo "curl -s -H \"Accept:application/json;version=1\" -H \"Content-Type: application/json\" -H \"Authorization: Bearer ${TOKEN}\" ${URL}/application/5453/documentrequest/%DOCUMENTREQUESTID%?get_file=true"
 
-JSON=$(curl -s -H "Accept:application/json;version=1" -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" ${URL}/application/5438/documentrequest/%DOCUMENTREQUESTID%?get_file=true)
+JSON=$(curl -s -H "Accept:application/json;version=1" -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" ${URL}/application/5453/documentrequest/%DOCUMENTREQUESTID%?get_file=true)
 
 echo ${JSON} | jq -r '.documentRequest.documents[0].fileContents' > CCADocument.base64
 
@@ -15,7 +15,8 @@ ENVIRONAME=$(uname)
 
 if [ ${ENVIRONAME} == 'Darwin' ]
     then
-        open CCADocument.pdf
+        #open CCADocument.pdf
+        echo CCADocument.pdf
     else
         CCADocument.pdf
 fi
