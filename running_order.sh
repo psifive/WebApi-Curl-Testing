@@ -5,6 +5,7 @@
 ./post_customer_address.sh
 ./post_customer_bankaccount.sh
 ./post_application.sh
+./post_application_asset.sh
 ./put_application_bankaccountlink.sh
 ./put_application_status_accepted.sh
 ./get_application_documentrequests.sh
